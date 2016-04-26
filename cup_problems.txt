@@ -1,0 +1,70 @@
+http://www.careercup.com/question?id=5870975748931584
+You have an array of length n, containing values of length 0 to n-1.
+Tell me if there exists a duplicate (return true or false).
+
+Do it in constant space and O(n) time.
+-------------------------------------------------------------------------
+http://www.careercup.com/question?id=5027701870034944
+Given n players with each having a skill level. Divide the players in 2 equal in number(max 1 difference if n is odd) such that the total skill difference between the teams is minimum.
+-------------------------------------------------------------------------
+http://www.careercup.com/question?id=5619823241330688
+You are given a grid of numbers. A snake sequence is made up of adjacent numbers such that for each number, the number on the right or the number below it is +1 or -1 its value. For example,
+
+1 3 2 6 8
+-9 7 1 -1 2
+1 5 0 1 9
+
+In this grid, (3, 2, 1, 0, 1) is a snake sequence.
+
+Given a grid, find the longest snake sequences and their lengths (so there can be multiple snake sequences with the maximum length).
+---------------------------------------------------------------------------
+http://www.careercup.com/question?id=5111068527427584
+ facebook-interview-questions
+
+Input - List<String> ["star", "rats", "ice", "cie", "arts"]
+print all anagrams in buckets:
+["star", "rats", "arts"]
+["ice", "cie"]
+
+The signature of unimplemented method is given:
+
+public void anagramBuckets(List<String> input);
+
+I was given this question during phone interview.
+--------------------------------------------------------------------------------
+http://www.careercup.com/question?id=5978392075698176
+ facebook-interview-questions
+
+As we know facebook always asks questions from graph theory he asked me this problem to code-
+
+there is a grid of n*n where each cell represent an Island or and some of these are very dangerous so u have to avoid these during path selections.You can move up,down,left ,right.You are given your starting position ,positions of dangerous Islands and position some specific Islands.Your task is to deliver a message to all the specific Islands in minimum number of moves to all specific Islands(NOTE- there are also chances that no moves are possible to cover all specific Island ,in such case you have to tell "NOT POSSIBLE TO DELIVER ALL ",otherwise output minimum moves).
+-------------------------------------------------------------------------------------------------
+http://www.careercup.com/question?id=5647413305933824
+ amazon-interview-questions
+
+"Given an array of strings, find the string which is made up of maximum number of other strings contained in the same array.
+
+e.g. “rat”, ”cat”, “abc”, “xyz”, “abcxyz”, “ratcatabc”, “xyzcatratabc”
+Answer: “xyzcatratabc”
+“abcxyz” contains 2 other strings,
+“ratcatabc” contains 3 other strings,
+“xyzcatratabc” contains 4 other strings"
+--------------------------------------------------------------------------------------------------
+http://www.careercup.com/question?id=5211521370030080
+ amazon-interview-questions
+
+Given a class with n people,where each people plays a game with all other people. Results are with you. You have to arrange them in a queue with a condition that, a[i] should have won a[i-1], for all I, you don’t need to care about a[i-2] . (a[i] may win or lose a[i-2]).
+- mail.kshitij.jain on October 09, 2013 in India
+--------------------------------------------------------------------------------------------------
+http://www.careercup.com/question?id=5801100120686592
+ amazon-interview-questions
+
+Print all pairs(sets) of prime numbers (p,q) such that p*q <= n, where n is given number
+- mail.kshitij.jain on October 09, 2013 in India
+---------------------------------------------------------------------------------------------------
+http://www.careercup.com/question?id=6193320829124608
+
+ facebook-interview-questions
+
+Given a undirected graph, source and destination, write the code to find the total number of distinct nodes visited, considering all possible paths.
+- R.V.reddy on October 09, 2013 in India 

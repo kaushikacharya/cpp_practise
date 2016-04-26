@@ -1,0 +1,30 @@
+DOS games ***
+http://www.codeproject.com/Articles/447332/Game-Programming-in-C-For-Beginners
+search in google: tic tac toe ai algorithm
+http://stackoverflow.com/questions/125557/what-algorithm-for-a-tic-tac-toe-game-can-i-use-to-determine-the-best-move-for
+
+Best way to get into game programming?
+(suggestion for maze game)
+http://www.cplusplus.com/forum/beginner/51965/
+links given to:
+http://lazyfoo.net/SDL_tutorials/index.php
+
+Game From Scratch C++ and SFML Edition!
+http://www.gamefromscratch.com/page/Game-From-Scratch-CPP-Edition.aspx
+
+http://www.gamedev.net/topic/450848-c-pong/
+
+http://www.gamedev.net/topic/589120-basic-maze-game-c/
+(contains input for maze)
+
+several games mentioned:
+http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-096-introduction-to-c-january-iap-2011/assignments/MIT6_096IAP11_project.pdf
+
+http://gamedev.tutsplus.com/articles/roundups/start-here/
+
+http://www.gamedev.net/page/resources/_/technical/game-programming/java-game-programming-part-i-the-basics-r1262
+http://www.gamedev.net/page/resources/_/technical/artificial-intelligence/
+
+
+
+

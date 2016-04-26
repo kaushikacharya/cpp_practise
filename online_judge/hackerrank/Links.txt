@@ -1,0 +1,7 @@
+Similar to ByteLandian tour:
+http://blog.singhanuvrat.com/problems/project-euler-number-of-routes-from-one-corner-to-another-in-a-grid  (IIT Kgp guy)
+http://cs.stackexchange.com/questions/3078/algorithm-that-finds-the-number-of-simple-paths-from-s-to-t-in-g
+http://stackoverflow.com/questions/10226251/graph-how-to-find-the-number-of-different-shortest-paths-between-two-vertices?rq=1
+
+nCr
+http://www.yeminghu.com/?cat=3

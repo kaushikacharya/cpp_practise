@@ -1,0 +1,273 @@
+case: p: 1 q : 1
+A1
+
+case: p: 1 q : 2
+impossible
+
+case: p: 1 q : 3
+impossible
+
+case: p: 1 q : 4
+impossible
+
+case: p: 1 q : 5
+impossible
+
+case: p: 1 q : 6
+impossible
+
+case: p: 1 q : 7
+impossible
+
+case: p: 1 q : 8
+impossible
+
+case: p: 1 q : 9
+impossible
+
+case: p: 1 q : 10
+impossible
+
+case: p: 1 q : 11
+impossible
+
+case: p: 1 q : 12
+impossible
+
+case: p: 1 q : 13
+impossible
+
+case: p: 1 q : 14
+impossible
+
+case: p: 1 q : 15
+impossible
+
+case: p: 1 q : 16
+impossible
+
+case: p: 1 q : 17
+impossible
+
+case: p: 1 q : 18
+impossible
+
+case: p: 1 q : 19
+impossible
+
+case: p: 1 q : 20
+impossible
+
+case: p: 1 q : 21
+impossible
+
+case: p: 1 q : 22
+impossible
+
+case: p: 1 q : 23
+impossible
+
+case: p: 1 q : 24
+impossible
+
+case: p: 1 q : 25
+impossible
+
+case: p: 1 q : 26
+impossible
+
+case: p: 2 q : 1
+impossible
+
+case: p: 2 q : 2
+impossible
+
+case: p: 2 q : 3
+impossible
+
+case: p: 2 q : 4
+impossible
+
+case: p: 2 q : 5
+impossible
+
+case: p: 2 q : 6
+impossible
+
+case: p: 2 q : 7
+impossible
+
+case: p: 2 q : 8
+impossible
+
+case: p: 2 q : 9
+impossible
+
+case: p: 2 q : 10
+impossible
+
+case: p: 2 q : 11
+impossible
+
+case: p: 2 q : 12
+impossible
+
+case: p: 2 q : 13
+impossible
+
+case: p: 3 q : 1
+impossible
+
+case: p: 3 q : 2
+impossible
+
+case: p: 3 q : 3
+impossible
+
+case: p: 3 q : 4
+A1C2A3B1D2B3C1A2C3D1B2D3
+
+case: p: 3 q : 5
+impossible
+
+case: p: 3 q : 6
+impossible
+
+case: p: 3 q : 7
+A1B3D2F1G3E2G1F3E1G2E3C2A3B1C3A2C1D3B2D1F2
+
+case: p: 3 q : 8
+A1B3C1A2C3D1B2D3E1G2E3C2A3B1D2F1H2F3G1E2G3H1F2H3
+
+case: p: 4 q : 1
+impossible
+
+case: p: 4 q : 2
+impossible
+
+case: p: 4 q : 3
+A1B3C1A2B4C2A3B1C3A4B2C4
+
+case: p: 4 q : 4
+impossible
+
+case: p: 4 q : 5
+A1B3C1A2B4D3E1C2D4E2C3A4B2D1E3C4A3B1D2E4
+
+case: p: 4 q : 6
+A1B3C1A2B4C2D4E2F4D3E1F3D2B1A3C4B2A4C3E4F2D1E3F1
+
+case: p: 5 q : 1
+impossible
+
+case: p: 5 q : 2
+impossible
+
+case: p: 5 q : 3
+impossible
+
+case: p: 5 q : 4
+A1B3A5C4D2B1A3B5D4C2B4A2C1D3C5A4B2D1C3D5
+
+case: p: 5 q : 5
+A1B3A5C4A3B1D2E4C5A4B2D1C3B5D4E2C1A2B4D5E3C2E1D3E5
+
+case: p: 6 q : 1
+impossible
+
+case: p: 6 q : 2
+impossible
+
+case: p: 6 q : 3
+impossible
+
+case: p: 6 q : 4
+A1B3A5C6D4B5D6C4D2B1A3C2B4A2C1D3B2D1C3D5B6A4C5A6
+
+case: p: 7 q : 1
+impossible
+
+case: p: 7 q : 2
+impossible
+
+case: p: 7 q : 3
+A1B3C1A2C3B1A3C2B4A6C7B5A7C6A5B7C5A4B2C4B6
+
+case: p: 8 q : 1
+impossible
+
+case: p: 8 q : 2
+impossible
+
+case: p: 8 q : 3
+A1B3C1A2B4C2A3B1C3A4B2C4A5B7C5A6B8C6A7B5C7A8B6C8
+
+case: p: 9 q : 1
+impossible
+
+case: p: 9 q : 2
+impossible
+
+case: p: 10 q : 1
+impossible
+
+case: p: 10 q : 2
+impossible
+
+case: p: 11 q : 1
+impossible
+
+case: p: 11 q : 2
+impossible
+
+case: p: 12 q : 1
+impossible
+
+case: p: 12 q : 2
+impossible
+
+case: p: 13 q : 1
+impossible
+
+case: p: 13 q : 2
+impossible
+
+case: p: 14 q : 1
+impossible
+
+case: p: 15 q : 1
+impossible
+
+case: p: 16 q : 1
+impossible
+
+case: p: 17 q : 1
+impossible
+
+case: p: 18 q : 1
+impossible
+
+case: p: 19 q : 1
+impossible
+
+case: p: 20 q : 1
+impossible
+
+case: p: 21 q : 1
+impossible
+
+case: p: 22 q : 1
+impossible
+
+case: p: 23 q : 1
+impossible
+
+case: p: 24 q : 1
+impossible
+
+case: p: 25 q : 1
+impossible
+
+case: p: 26 q : 1
+impossible
+

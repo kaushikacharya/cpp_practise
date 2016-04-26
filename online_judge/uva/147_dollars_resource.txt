@@ -1,0 +1,17 @@
+http://www.codeguru.com/cpp/cpp/algorithms/combinations/article.php/c15409/Dynamic-Programming-Combination-Sum-Problem.htm
+
+http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value
+
+http://www.codeproject.com/Articles/31002/Coin-Change-Problem-Using-Dynamic-Programming
+
+http://stackoverflow.com/questions/14783236/coin-change-algorithm-and-pseudocode-need-clarification
+
+http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/
+
+http://online-judge.uva.es/board/viewtopic.php?f=22&t=10522&hilit=dynamic+programming+coin+change
+"My vision to dynamic programming is not clear yet."
+
+http://online-judge.uva.es/board/viewtopic.php?f=22&t=10565&hilit=dynamic+programming+coin+change
+
+http://www.topcoder.com/tc?d1=tutorials&d2=dynProg&module=Static
+Dynamic Programming: From novice to advanced

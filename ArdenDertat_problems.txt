@@ -1,0 +1,54 @@
+Arder Dertat:
+-------------
+3. Largest Continuous Sum
+Given an array of integers (positive and negative) find the largest continuous sum.
+
+10. Kth Largest Element in Array
+Given an array of integers find the kth element in the sorted order (not the kth distinct element). So, if the array is [3, 1, 2, 1, 4] and k is 3 then the result is 2, because it’s the 3rd element in sorted order (but the 3rd distinct element is 3).
+
+21. Tree Reverse Level Order Print
+This is very similar to the previous post level order print. We again print the tree in level order, but now starting from bottom level to the root.
+
+26. Trim Binary Search Tree
+Given the root of a binary search tree and 2 numbers min and max, trim the tree such that all the numbers in the new tree are between min and max (inclusive). The resulting tree should still be a valid binary search tree.
+
+---------- these needs to be re-evaluated for efficient solution --------
+
+13. Median of Integer Stream
+Given a stream of unsorted integers, find the median element in sorted order at any given time. So, we will be receiving a continuous stream of numbers in some random order and we don’t know the stream length in advance. Write a function that finds the median of the already received numbers efficiently at any time. We will be asked to find the median multiple times. Just to recall, median is the middle element in an odd length sorted array, and in the even case it’s the average of the middle elements.
+
+
+---------- below this line are done -------
+
+1. Array Pair Sum
+Given an integer array, output all pairs that sum up to a specific value k.
+
+7. Binary Search Tree Check
+Given a binary tree, check whether it’s a binary search tree or not.
+
+16. Anagram Strings
+Given two strings, check if they’re anagrams or not. Two strings are anagrams if they are written using the same exact letters, ignoring space, punctuation and capitalization. Each letter should have the same count in both strings. For example, ‘Eleven plus two’ and ‘Twelve plus one’ are meaningful anagrams of each other.
+
+test cases: "Armand de Richelieu", "Ardue main d'Hercule"   //source: wiki
+"Horatio Nelson" into "Honor est a Nilo"
+"Florence Nightingale" into "Flit on, cheering angel"
+"Avida Dollars" for "Salvador Dalí"
+William Shakespeare = I am a weakish speller
+
+14. Check Balanced Parentheses
+Given a string of opening and closing parentheses, check whether it’s balanced. We have 3 types of parentheses: round brackets: (), square brackets: [], and curly brackets: {}. Assume that the string doesn’t contain any other character than these, no spaces words or numbers. Just to remind, balanced parentheses require every opening parenthesis to be closed in the reverse order opened. For example ‘([])’ is balanced but ‘([)]‘ is not.
+
+18. Find Even Occurring Element
+Given an integer array, one element occurs even number of times and all others have odd occurrences. Find the element with even occurrences.
+
+19. Find Next Palindrome Number
+Given a number, find the next smallest palindrome larger than the number. For example if the number is 125, next smallest palindrome is 131.
+
+20. Tree Level Order Print
+Given a binary tree of integers, print it in level order. The output will contain space between the numbers in the same level, and new line between different levels.
+
+24. Find Next Higher Number With Same Digits
+Given a number, find the next higher number using only the digits in the given number. For example if the given number is 1234, next higher number with same digits is 1243.
+
+25. Remove Duplicate Characters in String
+Remove duplicate characters in a given string keeping only the first occurrences. For example, if the input is ‘tree traversal’ the output will be ‘tre avsl’.

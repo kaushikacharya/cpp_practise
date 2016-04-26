@@ -1,0 +1,22 @@
+http://apps.topcoder.com/forums/;jsessionid=15CE54C37981C99844F311038E496176?module=Thread&threadID=578209&start=0&mc=5#817431
+
+Re: SPOJ- Copying Books BOOKS1 (response to post by zenithankit) | Reply
+
+TheLlama
+103 posts
+	In some sense this is a classical problem - both for DP and greedy.
+
+The greedy approach works approximately like this:
+
+1. Do a binary search on the maximal number of pages that a single scribe
+will be assigned. We are trying to minimize this number.
+2. For every number fixed by the binary search check greedily if the scribes
+can cope with it.
+
+Since step 2 is done in linear time the overall coplexity is n * log(p) -
+n is the number of the books, p - the sum of the pages in all books.
+The straightforward DP is n^2 * k (k is the number of scribes).
+
+A very similar greedy approach solves also the following problem:
+
+http://acm.tju.edu.cn/toj/showp2836.html

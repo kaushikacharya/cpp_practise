@@ -1,0 +1,14 @@
+http://www.idevlife.com/4220/
+POJ problem classification
+
+http://www.acmicpc-pacnw.org/results.htm
+Problem statements as well as input & output test cases
+
+http://ioi.eduardische.com/olympiads/
+Each year's contest site can be accessed
+
+http://acm.hust.edu.cn/vjudge/contest/view.action?cid=2435#overview
+Graph based 8 POJ problems with solutions given by different participants.
+
+http://acm.hust.edu.cn/vjudge/problem/status.action
+Solutions to problems from various online judge given by different participants.

@@ -1,0 +1,29 @@
+http://codereview.stackexchange.com/questions/558/sudoku-grid-special-purpose-iterators
+exercise: Sudoku implementation
+
+http://codereview.stackexchange.com/questions/14982/tonelli-shanks-algorithm-in-python
+
+http://codereview.stackexchange.com/questions/8656/how-can-i-improve-this-implementation-of-bulls-and-cows-algorithm
+exercise: bull and cows game
+
+http://codereview.stackexchange.com/questions/26600/how-can-i-improve-this-c-genetic-algorithm-implementation?rq=1
+  Learn from the review and note that this guy gives this as a sample in his job applications
+  
+http://codereview.stackexchange.com/questions/11387/shuttle-puzzle-how-can-i-make-this-c-code-better?rq=1
+exercise: shuttle puzzle
+
+http://codereview.stackexchange.com/questions/18785/c-implementation-of-trie-data-structure
+Given an array of words, print all anagrams together. For example, if the given array is {“cat”, “dog”, “tac”, “god”, “act”}, then output may be “cat tac act dog god”.
+
+http://codereview.stackexchange.com/questions/7578/lock-free-cache-oblivious-n-body-algorithm
+exercise: N-body simulation
+
+http://codereview.stackexchange.com/questions/7167/sum-of-all-primes-under-2-million
+
+http://codereview.stackexchange.com/questions/7362/how-can-i-improve-this-implementation-of-hangman
+exercise: Hangman game
+
+
+http://codereview.stackexchange.com/questions/5942/iterative-deepening-and-a?rq=1
+http://www.kosbie.net/cmu/fall-11/15-112/handouts/ai-search/notes-ai-search.html
+

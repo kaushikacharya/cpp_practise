@@ -1,0 +1,46 @@
+for k in range(1,6):
+	sum_k = 0
+	for j in range(1,k+1):
+		sum_k += 1.0/(j+1)
+	print '%d %f' % (k,sum_k)
+	print '%f < %f < %d' % ((k+2.0)/exp(1.0), exp(sum_k), (k+1))
+	if (k+2.0)/exp(1.0) < exp(sum_k):
+		print True
+	else:
+		print False
+	if exp(sum_k) < (k+1):
+		print True
+	else:
+		print False
+        
+        
+        
+>>> for k in range(1,11):
+	print 'k = %d, epsilon_k: %f' % (k, 1.0/(2*k))
+    
+>>> for k in range(1,11):
+	sum_k = 0
+	for j in range(1,k+1):
+		sum_k += 1.0/j
+	print 'k = %d, sum_k = %f' % (k,sum_k)
+
+>>> int(2.6753*100 + 0.5)*1.0/100
+2.68
+    
+>>> for k in range(1,31):
+	sum_k = 0
+	for j in range(1,k+1):
+		sum_k += 1.0/j
+	sum_k_eqn = log(k) + gamma + 1.0/(2*k)
+	diff_after_rounded = int(sum_k_eqn*100 + 0.5)*1.0/100 - int(sum_k*100 + 0.5)*1.0/100
+	print 'k = %d, sum_k = %f, sum(eqn based) = %f, diff = %f, diff(rounded sum) = %f' % (k,sum_k,sum_k_eqn,sum_k_eqn-sum_k, diff_after_rounded)
+    
+// This will give the 'k' where sum_k and sum_k_eqn are different after being rounded upto 2 decimal points.
+>>> for k in range(1,281):
+	sum_k = 0
+	for j in range(1,k+1):
+		sum_k += 1.0/j
+	sum_k_eqn = log(k) + gamma + 1.0/(2*k)
+	if ( int(sum_k*100+0.5)*1.0/100 != int(sum_k_eqn*100+0.5)*1.0/100 ):
+		diff_after_rounded = int(sum_k_eqn*100 + 0.5)*1.0/100 - int(sum_k*100 + 0.5)*1.0/100
+		print 'k = %d, sum_k = %f, sum(eqn based) = %f, diff = %f, diff(rounded sum) = %f' % (k,sum_k,sum_k_eqn,sum_k_eqn-sum_k, diff_after_rounded)
