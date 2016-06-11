@@ -1,0 +1,10 @@
+How do online judges identify Memory Limit Exceeded?
+https://www.quora.com/What-is-the-simplest-and-most-accurate-way-to-measure-the-memory-used-by-a-program-in-a-programming-contest-environment
+
+What is the stack and heap memory architecture used by C?
+https://www.quora.com/What-is-the-stack-and-heap-memory-architecture-used-by-C
+
+http://stackoverflow.com/questions/194465/how-to-parse-a-string-to-an-int-in-c
+Dan Moulding mentions about issue of using string stream
+
+
