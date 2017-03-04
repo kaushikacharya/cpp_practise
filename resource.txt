@@ -7,4 +7,5 @@ https://www.quora.com/What-is-the-stack-and-heap-memory-architecture-used-by-C
 http://stackoverflow.com/questions/194465/how-to-parse-a-string-to-an-int-in-c
 Dan Moulding mentions about issue of using string stream
 
+http://fusharblog.com/3-ways-to-define-comparison-functions-in-cpp/
 
