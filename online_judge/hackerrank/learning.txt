@@ -1,0 +1,3 @@
+Minimum Loss:
+    1. My solution is O(n*n) in worst case. Whereas the editorial shows how to do it in O(n*log n).
+    2. Use upper_bound of set for binary search
