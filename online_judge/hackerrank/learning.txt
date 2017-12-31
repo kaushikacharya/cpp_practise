@@ -1,3 +1,9 @@
 Minimum Loss:
     1. My solution is O(n*n) in worst case. Whereas the editorial shows how to do it in O(n*log n).
     2. Use upper_bound of set for binary search
+    
+Common Child:
+    Dynamic Programming
+    Editorial explains for the 4th and 5th row of example why 2nd 'E' can't be added.
+    Probably my equations are not clean. I do get confused while explaining.
+    
