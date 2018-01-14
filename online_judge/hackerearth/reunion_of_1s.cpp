@@ -473,13 +473,21 @@ private:
     RBNode<T>* nil_node_;
 };
 
+template<typename T>
+bool cmp(pair<T,T>& p1, pair<T,T>& p2)
+{
+    // pair: 1st element: start index of sub-array of 1s,   2nd element: length of sub-array
+    return p1.first < p2.first;
+}
+
 // Checks which are the sub-arrays of 1s
 template<typename T>
 class ReUnion
 {
 public:
-    ReUnion(string str)
+    ReUnion(string str, bool use_rb_tree=false)
     : str_(str)
+    , use_rb_tree_(use_rb_tree)
     {
         max_len_sub_array_ = 0;
         initialize_rb_tree();
@@ -512,10 +520,17 @@ public:
                 // check if sub-array of 1s has just ended
                 if ( (i > 0) && (str_[i-1] == '1') )
                 {
-                    RBNode<T>* node = new RBNode<T>(rb_tree_.nil_node(), rb_tree_.nil_node(), nullptr);
-                    node->key = make_pair(sub_array_start_index, sub_array_length);
-                    node->color = red;
-                    rb_tree_.insert_node(node);
+                    if (use_rb_tree_)
+                    {
+                        RBNode<T>* node = new RBNode<T>(rb_tree_.nil_node(), rb_tree_.nil_node(), nullptr);
+                        node->key = make_pair(sub_array_start_index, sub_array_length);
+                        node->color = red;
+                        rb_tree_.insert_node(node);
+                    }
+                    else
+                    {
+                        sub_array_map_.insert(make_pair(sub_array_start_index, sub_array_length));
+                    }
 
                     max_len_sub_array_ = max(max_len_sub_array_, sub_array_length);
                 }
@@ -524,13 +539,20 @@ public:
             }
         }
 
-        // check if the last sub-array of 1s was till the str_ end
+        // check if the last sub-array of 1s exists till the str_ end
         if (sub_array_length > 0)
         {
-            RBNode<T>* node = new RBNode<T>(rb_tree_.nil_node(), rb_tree_.nil_node(), rb_tree_.nil_node());
-            node->key = make_pair(sub_array_start_index, sub_array_length);
-            node->color = red;
-            rb_tree_.insert_node(node);
+            if (use_rb_tree_)
+            {
+                RBNode<T>* node = new RBNode<T>(rb_tree_.nil_node(), rb_tree_.nil_node(), rb_tree_.nil_node());
+                node->key = make_pair(sub_array_start_index, sub_array_length);
+                node->color = red;
+                rb_tree_.insert_node(node);
+            }
+            else
+            {
+                sub_array_map_.insert(make_pair(sub_array_start_index, sub_array_length));
+            }
 
             max_len_sub_array_ = max(max_len_sub_array_, sub_array_length);
         }
@@ -558,51 +580,116 @@ public:
         if ( ( (pos == 0) || (str_[pos-1] == '0') ) && ( (pos == (str_.size()-1)) || (str_[pos+1] == '0') ) )
         {
             // case 1: new sub-array needs to be created
-            RBNode<T>* node = new RBNode<T>(rb_tree_.nil_node(), rb_tree_.nil_node(), rb_tree_.nil_node());
             T sub_array_length = 1;
-            node->key = make_pair(pos, sub_array_length);
-            node->color = red;
-            rb_tree_.insert_node(node);
+            if (use_rb_tree_)
+            {
+                RBNode<T>* node = new RBNode<T>(rb_tree_.nil_node(), rb_tree_.nil_node(), rb_tree_.nil_node());
+                node->key = make_pair(pos, sub_array_length);
+                node->color = red;
+                rb_tree_.insert_node(node);
+            }
+            else
+            {
+                sub_array_map_.insert(make_pair(pos, sub_array_length));
+            }
+
             // update max length of sub-array of 1s
             max_len_sub_array_ = max(max_len_sub_array_, sub_array_length);
         }
         else if ( (pos > 0) && (pos < (str_.size()-1)) && (str_[pos-1] == '1') && (str_[pos+1] == '1') )
         {
             // case 4: merge
-            cout << "\tcase 4: merge" << endl;
+            // cout << "\tcase 4: merge" << endl;
 
             // 1. extend the left sub-array node till the right sub-array node
             // 2. delete the right sub-array node
-            RBNode<T>* left_node = get_left_sub_array_node(pos);
-            RBNode<T>* right_node = get_right_sub_array_node(pos);
+            if (use_rb_tree_)
+            {
+                RBNode<T>* left_node = get_left_sub_array_node(pos);
+                RBNode<T>* right_node = get_right_sub_array_node(pos);
 
-            left_node->key.second += 1 + right_node->key.second;
-            rb_tree_.delete_node(right_node);
+                left_node->key.second += 1 + right_node->key.second;
+                rb_tree_.delete_node(right_node);
 
-            // update max length of sub-array of 1s
-            max_len_sub_array_ = max(max_len_sub_array_, left_node->key.second);
+                // update max length of sub-array of 1s
+                max_len_sub_array_ = max(max_len_sub_array_, left_node->key.second);
+            }
+            else
+            {
+                auto it = sub_array_map_.upper_bound(pos);
+                assert((it != sub_array_map_.begin()) && "For merging there needs to an element on left hand side");
+                assert((it != sub_array_map_.end()) && "For merging there needs to an element on right hand side");
+
+                // https://stackoverflow.com/questions/36997584/no-match-for-operator-aka-std-rb-tree-const-iterator-stdmap
+                // https://stackoverflow.com/questions/22874535/dependent-scope-need-typename-in-front
+                // https://stackoverflow.com/questions/33653332/update-map-which-is-read-only-object-using-c
+                T len_right_sub_array = (*it).second;
+                --it;
+                (*it).second += 1 + len_right_sub_array;
+
+                // update max length of sub-array of 1s
+                max_len_sub_array_ = max(max_len_sub_array_, (*it).second);
+
+                // delete the right subarray set as it has been merged with the previous one
+                ++it;
+                sub_array_map_.erase(it);
+            }
+
         }
         else if ( (pos > 0) && (str_[pos-1] == '1') )
         {
             // case 2: extend left sub-array to pos
-            RBNode<T>* left_node = get_left_sub_array_node(pos);
-            // update key
-            left_node->key.second += 1;
+            if (use_rb_tree_)
+            {
+                RBNode<T>* left_node = get_left_sub_array_node(pos);
+                // update key
+                left_node->key.second += 1;
 
-            // update max length of sub-array of 1s
-            max_len_sub_array_ = max(max_len_sub_array_, left_node->key.second);
+                // update max length of sub-array of 1s
+                max_len_sub_array_ = max(max_len_sub_array_, left_node->key.second);
+            }
+            else
+            {
+                auto it = sub_array_map_.upper_bound(pos);
+                assert((it != sub_array_map_.begin()) && "For extending left sub-array there needs to an element on left hand side");
+                --it;
+                (*it).second += 1;
+                // update max length of sub-array of 1s
+                max_len_sub_array_ = max(max_len_sub_array_, (*it).second);
+            }
+
         }
         else
         {
             assert(pos < (str_.size()-1));
             // case 3: pre-pend right sub-array with pos
-            RBNode<T>* right_node = get_right_sub_array_node(pos);
-            // update key
-            right_node->key.first -= 1; // shifting start index of sub-array to left
-            right_node->key.second += 1;
 
-            // update max length of sub-array of 1s
-            max_len_sub_array_ = max(max_len_sub_array_, right_node->key.second);
+            if (use_rb_tree_)
+            {
+                RBNode<T>* right_node = get_right_sub_array_node(pos);
+                // update key
+                right_node->key.first -= 1; // shifting start index of sub-array to left
+                right_node->key.second += 1;
+
+                // update max length of sub-array of 1s
+                max_len_sub_array_ = max(max_len_sub_array_, right_node->key.second);
+            }
+            else
+            {
+                auto it = sub_array_map_.upper_bound(pos);
+                assert((it != sub_array_map_.end()) && "For extending on left side there needs to an element on right hand side");
+
+                // shifting start index of sub-array to left
+                // For this we need to delete the element and create a new element
+                T sub_array_start_index = (*it).first;
+                T len_right_sub_array = (*it).second;
+                sub_array_map_.erase(it);
+                sub_array_map_.insert(make_pair(sub_array_start_index-1,len_right_sub_array+1));
+
+                // update max length of sub-array of 1s
+                max_len_sub_array_ = max(max_len_sub_array_, len_right_sub_array+1);
+            }
+
         }
     }
 
@@ -617,7 +704,7 @@ public:
             // assert(cur_node != rb_tree_.nil_node());
             T start_index = cur_node->key.first;
             T sub_array_size = cur_node->key.second;
-            cout << "\t(left) cur_node range: [" << start_index << "," << start_index+sub_array_size << ")" << endl;
+            // cout << "\t(left) cur_node range: [" << start_index << "," << start_index+sub_array_size << ")" << endl;
 
             if (pos == (start_index+sub_array_size))
             {
@@ -648,7 +735,7 @@ public:
             assert(cur_node != rb_tree_.nil_node());
             T start_index = cur_node->key.first;
             T sub_array_size = cur_node->key.second;
-            cout << "\t(right) cur_node range: [" << start_index << "," << start_index+sub_array_size << ")" << endl;
+            // cout << "\t(right) cur_node range: [" << start_index << "," << start_index+sub_array_size << ")" << endl;
 
             if (pos == (start_index-1))
             {
@@ -789,8 +876,10 @@ public:
 
 private:
     RBTree<T> rb_tree_;
+    map<T,T> sub_array_map_; // key: start position of sub-array,  value: length of sub-array
     string str_;
     T max_len_sub_array_;
+    bool use_rb_tree_;
 };
 
 void string_iteration_test()
@@ -859,7 +948,7 @@ int main(int argc, char* argv[])
         cin >> str;
     }
 
-    ReUnion<unsigned long> reunion(str);
+    ReUnion<unsigned long> reunion(str, false);
 
     unsigned long pos;
     char ch;
@@ -874,7 +963,7 @@ int main(int argc, char* argv[])
             cin >> ch;
         }
         // cout << "ch: " << ch << endl;
-        cout << "query #" << i << endl;
+        // cout << "query #" << i << endl;
 
         if (ch == '1')
         {
@@ -894,11 +983,15 @@ int main(int argc, char* argv[])
             }
             // cout << "pos: " << pos << endl;
             reunion.update_character(pos-1); // subtracting 1 as we are using 0-indexed
+
+            /*
+            // For debugging purpose of Red-Black tree
             bool is_match = reunion.check_bst_validity();
             if (!is_match)
             {
                 break;
             }
+            */
         }
     }
 
@@ -914,10 +1007,18 @@ int main(int argc, char* argv[])
 Reference:
 
 Red-Black tree:
-For insertion followed https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
-For deletion followed CLRS book
+    For insertion followed https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
+    For deletion followed CLRS book
 
 Current Status:
+Successful
+Implemented using stl map which is usually implemented as red-black trees.
 
+Previous Status:
 Failing in most of the test cases. Instead of implementing red-black tree, better to use set of stl which is an implementation of red-black tree.
+Realized later that instead of set of pair we should use map. Following is the reason for that:
+
+https://stackoverflow.com/questions/3248554/whats-the-difference-between-setpair-and-map-in-c
+bk1e's answer explains that value in set(pair(key,value)) can't be modified in-place. The element needs to be deleted and then inserted again.
+In-place update can be done in map.
 */
