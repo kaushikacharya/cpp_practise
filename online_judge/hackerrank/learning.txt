@@ -7,3 +7,9 @@ Common Child:
     Editorial explains for the 4th and 5th row of example why 2nd 'E' can't be added.
     Probably my equations are not clean. I do get confused while explaining.
     
+Simple File Commands:
+    ??? In create_file(), if I use filenameToIndexMap_.size() to assign value for unordered_map it fails.
+    Explanation by Vlad from Moscow:
+    https://stackoverflow.com/questions/44600167/shocked-by-the-strange-behavior-of-unordered-map
+    You should not rely on the order of the evaluation of the left and the right operands.
+    
