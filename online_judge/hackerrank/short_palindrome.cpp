@@ -436,16 +436,17 @@ int main()
 
 3rd submission:
     Used dynamic programming. Took hint from eric2013(Eric Welch) in discussion thread.
+    Status: Solved
     Time complexity: O(n)
     Space complexity: O(n)
 
 2nd submission:
-    status: Timeout
+    Status: Timeout
     Time complexity: O(n^2)
     Space complexity: O(n)
 
 1st submission:
-    status: "Abort Called"
+    Status: "Abort Called"
     Time complexity: O(n^2)
     Space complexity: O(n^2)
 */
