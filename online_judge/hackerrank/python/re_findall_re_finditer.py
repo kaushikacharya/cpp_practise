@@ -1,4 +1,5 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
+# https://www.hackerrank.com/challenges/re-findall-re-finditer
 # Aug 08th 2018
 
 import re

@@ -1,4 +1,5 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
+# https://www.hackerrank.com/challenges/validating-named-email-addresses
 # Aug 09th 2018
 
 import email.utils
