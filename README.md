@@ -2,7 +2,7 @@
 
 
 * Leetcode
-    * [Solutions](./leetcode)
+    * [Solutions](https://github.com/kaushikacharya/leetcode)
     * [Profile](https://leetcode.com/kaushik_acharya/)
     
 * HackerRank
