@@ -9,7 +9,8 @@ BinarySearch - Online Programming
 |91|[Longest Tree Sum Path From Root to Leaf](https://binarysearch.com/problems/Longest-Tree-Sum-Path-From-Root-to-Leaf)|[C++](./src/longest_tree_sum_path_from_root_to_leaf.cpp)|[Y](longest_tree_sum_path_from_root_to_leaf_test)|
 |127|[Pascal's Triangle](https://binarysearch.io/problems/Pascal's-Triangle)|[C++](./src/pascals_triangle.cpp)|
 |592|[Diagonal Tree Traversal](https://binarysearch.com/problems/Diagonal-Tree-Traversal)|[C++](./src/diagonal_tree_traversal.cpp)|[Y](./test/diagonal_tree_traversal_test.cpp)|
-|875|[Largest Pair of Points](https://binarysearch.com/problems/Largest-Pair-of-Points)|[C++](./src/largest_pair_of_points.cpp)|[Y](./test/largest_pair_of_points_test.cpp)|
+|866|[Largest Pair of Points](https://binarysearch.com/problems/Largest-Pair-of-Points)|[C++](./src/largest_pair_of_points.cpp)|[Y](./test/largest_pair_of_points_test.cpp)|
+|867|[Tree Shifting](https://binarysearch.com/problems/Tree-Shifting)|[C++](./src/tree_shifting.cpp)|[Y](./test/tree_shifting_test.cpp)|
 |924|[Minimize Absolute Difference of Three Numbers](https://binarysearch.com/problems/Minimize-Absolute-Difference-of-Three-Numbers)|[C++](./src/minimize_absolute_difference_of_three_numbers.cpp)|[Y](./test/minimize_absolute_difference_of_three_numbers_test.cpp)|
 |926|[Tree with Distinct Parities](https://binarysearch.com/problems/Tree-with-Distinct-Parities)|[C++](./src/tree_with_distinct_parities.cpp)|[Y](./test/tree_with_distinct_parities_test.cpp)|
 |980|[Number of Moves to Capture the King](https://binarysearch.com/problems/Number-of-Moves-to-Capture-the-King)|[C++](./src/number_of_moves_to_capture_the_king.cpp)|[Y](./test/number_of_moves_to_capture_the_king_test.cpp)|
