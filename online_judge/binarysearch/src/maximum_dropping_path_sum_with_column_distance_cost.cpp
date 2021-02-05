@@ -26,15 +26,39 @@ int solve(vector<vector<int>>& matrix) {
     // maxPathSum[j] represents the max dropping path ending at j'th column till the current row
     vector<int> maxPathSum = matrix[0];
     vector<int> curMaxPathSum(m, 0);
+    // subset of max drop path sum up to previous row.
+    // This subset is chosen by defining a min value based on max value and its max distance cost.
+    // Worst case: For each row, we would compare m*m
+    set<pair<int, int>> maxPathSumSubset;
 
     // iterate over each row from row #1 onwards and keep updating the max drop path sum
     for (int i=1; i < n; ++i){
+        // populate subset of max path drop sum
+        vector<int>::iterator pathIt = max_element(maxPathSum.begin(), maxPathSum.end());
+        int maxVal = *pathIt;
+        int minVal = maxVal - max(pathIt-maxPathSum.begin(), maxPathSum.end()-pathIt-1);
+
+        // Build the max drop path sum subset
+        maxPathSumSubset.clear();
+
+        for (int j=0; j != m; ++j){
+            if (maxPathSum[j] >= minVal){
+                maxPathSumSubset.insert(make_pair(maxPathSum[j], j));
+            }
+        }
+
         // compute the max dropping path ending at matrix[i][j]
         for (int j=0; j != m; ++j){
             int best_val = INT_MIN;
+            /*
             for (int k=0; k != m; ++k){
                 int cur_val = maxPathSum[k] + matrix[i][j] - abs(j-k);
                 // cout << "\t\ti: " << i << " :: j: " << j << " :: k: " << k << " :: cur_val: " << cur_val << endl;
+                best_val = max(best_val, cur_val);
+            }
+            */
+            for (set<pair<int, int>>::iterator it=maxPathSumSubset.begin(); it != maxPathSumSubset.end(); ++it){
+                int cur_val = matrix[i][j] + (*it).first - abs(j-(*it).second);
                 best_val = max(best_val, cur_val);
             }
             // cout << "\ti: " << i << " :: j: " << j << " :: best_val: " << best_val << endl;
